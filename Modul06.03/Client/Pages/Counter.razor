@@ -1,0 +1,27 @@
+﻿@page "/shopping"
+
+<h1>Shopping</h1>
+
+<input type="text" @bind="ting" />
+
+<button @onclick="Tilfoej">Tilføj</button>
+
+@foreach (var ting in Indkoebsliste)
+{
+    <div>@ting</div>
+}
+
+
+@code {
+
+    List<string> Indkoebsliste = new List<string>();
+    string ting;
+
+    private void Tilfoej()
+    {
+        if (Indkoebsliste.Contains(ting))
+        {
+            Indkoebsliste.Add("ting");
+        }
+    }
+}
